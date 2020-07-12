@@ -52,6 +52,7 @@ input_list = [10, 11, 2, 3, 5, 8, 23, 11, 2, 5, 76, 43, 2, 32, 76, 3, 10, 0, 1]
 res = lowest_int_index(input_list)
 print(res)
 
+
 print('Task 3')
 
 
@@ -76,6 +77,7 @@ input_list = [10, 11, 2, 3, 5, 8, 23, 11, 2, 5, 76, 43, 2, 32, 76, 3, 10, 0, 1]
 res = reversed_list(input_list)
 print(res)
 
+
 print('Task 4')
 
 
@@ -98,6 +100,7 @@ res = find_common_keys(dict1, dict2)
 print(res)
 
 
+print('Task 5')
 
 
 student_list = [
