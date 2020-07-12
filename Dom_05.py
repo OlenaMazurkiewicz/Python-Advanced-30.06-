@@ -133,26 +133,17 @@ def sort_by_age(student_list):
     """
 
 
-    size = len(student_list)
+    key_1 = 'age'
+    decor = [(dict_[key_1], dict_) for dict_ in student_list]
+    decor.sort()
+    output_dict = [dict_ for(key, dict_) in decor]
 
-    for i in range(size):
-        min = i
-        for j in range(i+1, size):
-            if student_list[min]['age'] > student_list[j]['age']:
-                min = j
-        student_list[i], student_list[min] = student_list[min], student_list[i]
+    key_2 = 'city'
 
-
-
-    sorted_dict = dict()
-    for i in range(size):
-        sorted_dict = student_list[i]['city']
-
-
+    sorted_dict = {dict_[key_2]: [ dict_] for dict_ in student_list}
 
     return sorted_dict
 
 
 res = sort_by_age(student_list)
 print(res)
-
