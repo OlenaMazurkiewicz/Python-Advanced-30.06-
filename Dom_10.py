@@ -56,7 +56,7 @@ class Time:
         return new_hours, new_minutes, new_seconds
 
     def __repr__(self):
-        return f" Time: {self.hours}:{self.minutes}:{new_second} "
+        return f" Time: {self.hours}:{self.minutes}:{self.seconds} "
 
     def __str__(self):
         return f"Time: {self.hours}:{self.minutes}:{self.seconds} "
@@ -73,6 +73,6 @@ hours_shift = 2
 
 time_info = Time(h, m , s)
 
-add_second = time_info.time_shift(seconds_shift, minutes_shift, hours_shift)
+add_time = time_info.time_shift(seconds_shift, minutes_shift, hours_shift)
 
 print(time_info)
