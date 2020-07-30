@@ -27,8 +27,7 @@ class Battleship:
             print()
 
         return field_ships
-
-    @staticmethod
+    
     def field_shots_gen(self):
         field_shots = [['~'] * self.size for _ in range(self.size)]
         print('Shots field')
@@ -46,7 +45,6 @@ class Battleship:
             print('make another shot')
 
     def run(self):
-
         player_ship_1 = Battleship.field_ships_gen(self)
         player_shot_1 = Battleship.field_shots_gen(self)
         print('Make one perfect shot, please!')
