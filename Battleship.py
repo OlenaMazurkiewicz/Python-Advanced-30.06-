@@ -6,8 +6,6 @@ class Battleship:
     """
     Base class for battleship game
     """
-
-
     def __init__(self, size):
         """
          :param size: playboard size
