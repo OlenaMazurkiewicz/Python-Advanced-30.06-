@@ -26,7 +26,7 @@ async def main():
         "compsci",
         "microbork"
     }
-    data = await asyncio.gather(*(get_reddit_top(subreddit) for subreddit in reddits))
+    await asyncio.gather(*(get_reddit_top(subreddit) for subreddit in reddits))
     
     
     
