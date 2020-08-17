@@ -21,7 +21,7 @@ def ponger(receiver, sender, response):
     msg = receiver.recv()
     print(f"Process{getpid()} got message: {msg}")
     sleep(1)
-    receiver.send(sender)
+    sender.send(f"{response}")
 
 
 if __name__ == "__main__":
