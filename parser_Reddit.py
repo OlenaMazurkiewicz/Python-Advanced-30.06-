@@ -9,15 +9,18 @@ async def request_data(url):
 
 
 async def get_reddit_top(subreddit):
-    data_tot = await request_data(f'https://www.reddit.com/r/{subreddit}/top.json?sort=top&t=day&limit=5')
-    j = json.loads(data_tot)
+    data_total = await request_data(f'https://www.reddit.com/r/{subreddit}/top.json?sort=top&t=day&limit=5')
+    j = json.loads(data_total)
     for i in j['data']['children']:
-        reddit_name = i['data']['name']
+
         score = i['data']['score']
         title = i['data']['title']
         link = i['data']['url']
+        top = {title: {'score': int(score), 'link': str(link)}}
+        dep_top = {subreddit: top}
 
-    print(reddit_name + ':' + str(score) + title + ' (' + link + ')')
+        return dep_top
+
 #
 async def main():
 
@@ -26,8 +29,7 @@ async def main():
         "compsci",
         "microbork"
     }
-    await asyncio.gather(*(get_reddit_top(subreddit) for subreddit in reddits))
-    
-    
-    
+    data = await asyncio.gather(*(get_reddit_top(subreddit) for subreddit in reddits))
+    print(data)
+
 asyncio.run(main())
