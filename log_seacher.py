@@ -8,10 +8,9 @@ import os
 def log_reading(func):
     def wrapper(*args):
         log_reading = list()
-        ext = '.log'
         file_list = func(*args)
         for f in file_list:
-            if ext in f:
+            if f[-3:]  == 'log':
                 file = open(f, 'r')
                 log_reading = file.readlines()
                 file.close()
@@ -26,5 +25,4 @@ def get_files(path):
 
 res =  get_files("E:\Python Advanced")
 print(res)
-
 
