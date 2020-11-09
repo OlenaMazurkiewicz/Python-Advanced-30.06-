@@ -13,16 +13,16 @@ def str_to_html(tags):
 
         def wrapper(text):
 
-            open_tag = ("<i>", "<b>")
-            close_tag = ("</i>", "</b>")
             core = "{open_tag}{text}{close_tag}"
 
             for tag in tags:
-                if tag == "bold":
-                    text = core.format(open_tag=open_tag[1], text=text, close_tag=close_tag[1])
-
-
                 if tag == "italic":
+                    pattern = tag_base.pop(tag)
+                    subpattern = pattern.split('%')
+                    open_subpattern = str(subpattern[0])
+                    close_subpattern = str(subpattern[2])
+                    text = core.format(open_tag=open_subpattern, text=text, close_tag=close_subpattern)
+                if tag == "bold":
                     pattern = tag_base.pop(tag)
                     subpattern = pattern.split('%')
                     open_subpattern = str(subpattern[0])
