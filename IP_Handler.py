@@ -33,7 +33,7 @@ class IpHandler:
 
     def get_oct_1_3(self):
         for i in range(len(self._ipList)):
-            get_oct_1_3 = [elem[3::] for elem in self._ipList]
+            get_oct_1_3 = [elem[3:] for elem in self._ipList]
             return get_oct_1_3
 
     def get_oct_3(self):
