@@ -23,9 +23,9 @@ class IpHandler:
         self._ipList = newList
 
     def reverse_IP(self):
-        for i in range(len(ipList)):
-            ipList[i] = ipList[i].split('.')
-            reverse_IP = [elem[::-1] for elem in ipList][::-1]
+        for i in range(len(self._ipList)):
+            self._ipList[i] = self._ipList[i].split('.')
+            reverse_IP = [elem[::-1] for elem in self._ipList][::-1]
             reverse_IP.reverse()
             delimiter = '.'
             reverse_IP[i] = delimiter.join(reverse_IP[i])
@@ -33,8 +33,16 @@ class IpHandler:
 
 
     def get_oct_1_3(self):
-        """Returns a list of IPs without first octets (127.0.0.1 -> .0.0.1)"""
         pass
+
+        # for i in range(len(ipList)):
+        #     ipList[i] = ipList[i].split('.')
+        #     ipList[i].pop(0)
+        #     get_oct_1_3 = ipList[i]
+        #     print(get_oct_1_3)
+        #     delimiter = '.'
+        #     get_oct_1_3[i] = delimiter.join(ipList[i])
+        #     return get_oct_1_3
 
     def get_oct_3(self):
         """Returns a list of last octets of each IP (127.0.0.1 -> .1)"""
@@ -50,3 +58,6 @@ print(d.ipList)
 
 res = d.reverse_IP()
 print(res)
+
+# res1 = d.get_oct_1_3()
+# print(res1)
