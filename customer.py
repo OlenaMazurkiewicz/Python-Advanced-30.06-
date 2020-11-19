@@ -2,7 +2,7 @@ import uuid
 
 from user import User
 from order import Order
-
+from review import Review
 
 class Customer(User):
     def __init__(self, username, userpass, first_name, last_name, phone,
@@ -14,6 +14,7 @@ class Customer(User):
         self.date_of_birth = date_of_birth
         self.bonus_amount = 0
         self.orders = list()
+        self.reviews = list()
 
     def __str__(self):
         return f"Customer {self.id}: {self.username} ({self.first_name} {self.last_name})"
@@ -22,6 +23,12 @@ class Customer(User):
         new_order = Order(self, item, amount)
         self.orders.append(new_order)
         return new_order
+
+
+    def add_review(self, text, customer, score):
+        new_review = Review(text, customer, score)
+        self.reviews.append(new_review)
+        return new_review
 
 
 if __name__ == '__main__':
@@ -34,3 +41,4 @@ if __name__ == '__main__':
     c1.create_order(i1, 3)
     print(c1)
     print(c1.orders)
+
